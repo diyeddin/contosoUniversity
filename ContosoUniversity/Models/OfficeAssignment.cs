@@ -10,8 +10,8 @@ namespace ContosoUniversity.Models
                                               // The EF won't recognize InstructorID as the primary key unless you follow the ID or classnameID naming convention. So we had to use the [Key] attribute to identify it as the key.
         [StringLength(50)]
         [Display(Name = "Office Location")]
-        public string Location { get; set; }
+        public string? Location { get; set; }
 
-        public Instructor Instructor { get; set; }
+        public Instructor? Instructor { get; set; } // [TODO] fix, this should be non-nullable but its causing issues in .NET 6+ so we'll make it nullable for now.
     }
 }
